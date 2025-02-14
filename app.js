@@ -1,10 +1,26 @@
 const express = require('express');
 const app = express();
 const conn = require('./config/db');
-const port = 3000
+const port = 5000
+const path = require('path');
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// routes
+const web = require('./routes/web');
+  app.use('/', web);
+
+
+// public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// view engine
+app.set('view engine', 'ejs'); 
+app.set('views', path.join(__dirname, 'views'));
+
+
+// crud logic
 app.get('/get-hobby', function (req, res) {
     const queryStr = "SELECT id, hobby FROM hobby WHERE deleted_at IS NULL";
     conn.query(queryStr, (err, results) => {
@@ -145,13 +161,17 @@ app.delete('/delete-hobby', function(req, res){
 })
 
 
-app.get('/', (req, res) => {
-    const data = "Hello World";
+// app.get('/', (req, res) => {
+//     const data = "Hello World";
 
-    res.send(data)
+//     res.send(data)
     
-  })
+//   })
   
+
+  
+  
+
 
   
 app.listen(port, () => {
