@@ -1507,44 +1507,24 @@
                     id="content_wrapper">
                     <div class="page-content">
 
-
-
+                        <% if (body === 'store') { %>
+                            <%- include('store') %>
+                          <% } %>
+                          
                         <% if (body==='index' ) { %>
-                            <div class="flex justify-between items-center mb-6">
-                                <h2 class="text-2xl font-bold text-gray-800">Selamat datang di halaman Tentang Kami!
-                                </h2>
-                                <button
-                                    class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600">Create</button>
-                            </div>
-                            <p class="text-gray-700 mb-4">Ini adalah daftar hobi:</p>
-                            <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow">
-                                <thead>
-                                    <tr class="bg-gray-100">
-                                        <th class="border px-4 py-2 text-left text-gray-800 font-medium">No</th>
-                                        <th class="border px-4 py-2 text-left text-gray-800 font-medium">Hobi</th>
-                                        <th class="border px-4 py-2 text-left text-gray-800 font-medium">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% hobbies.forEach((hobby, index)=> { %>
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="border px-4 py-2 text-gray-700">
-                                                <%= index + 1 %>
-                                            </td>
-                                            <td class="border px-4 py-2 text-gray-700">
-                                                <%= hobby.hobby %>
-                                            </td>
-                                            <td class="border px-4 py-2">
-                                                <a href="/update/<%= hobby.hobby %>/<%= hobby.id %>" class="bg-blue-500 text-white px-2 py-1 rounded  mr-2">Update</a>
-                                                <button class="bg-red-500 text-white px-2 py-1 rounded ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <% }) %>
-                                </tbody>
-                            </table>
+                            <%- include('index') %>
                             <% } %>
 
 
+                            <% if (body==='show' ) { %>
+                                <%- include('show') %>
+                                
+                                <% } %>
+                            
+                                <% if (body === 'update') { %>
+                                    <%- include('update') %>
+                                <% } %>
+                                
                     </div>
                 </div>
             </div>

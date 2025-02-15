@@ -1,0 +1,26 @@
+<div class="card shadow-lg p-4 mx-auto" style="width: 40rem; border-radius: 1rem; margin-left: 150px;">
+    <h1 class="card-title text-center mb-4">Edit Hobby</h1>
+    <form action="/update" method="post">
+        <input type="hidden" name="id" value="<%= hobby.id %>">
+        <div class="mb-3">
+            <label for="hobby" class="form-label">Hobby</label>
+            <input 
+                type="text" 
+                id="hobby" 
+                name="hobby" 
+                placeholder="Enter your hobby" 
+                class="form-control"
+                required
+                value="<%= hobby.hobby %>"
+            />
+      </div>
+      <p>Debug Info: ID = <%= hobby.id %>, Hobby = <%= hobby.hobby %></p>
+      <button 
+        type="submit" 
+        class="btn btn-primary w-100 " style="margin-top: 20px;"
+      >
+        Submit
+      </button>
+      <a href="/index" class="btn btn-success w-100">Kembali</a>
+    </form>
+  </div>

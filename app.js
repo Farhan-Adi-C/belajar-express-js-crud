@@ -7,6 +7,10 @@ const path = require('path');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// penanganan request body
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // routes
 const web = require('./routes/web');
   app.use('/', web);

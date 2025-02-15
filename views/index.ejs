@@ -1,2 +1,36 @@
-<h2>Ini adalah Halaman Tentang</h2>
-<p>Informasi tentang kami.</p>
+<div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-gray-800">Selamat datang di halaman Tentang Kami!
+    </h2>
+    <a href="/store"
+        class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600">Create</a>
+</div>
+<p class="text-gray-700 mb-4">Ini adalah daftar hobi:</p>
+<table class="min-w-full bg-white border border-gray-300 rounded-lg shadow">
+    <thead>
+        <tr class="bg-gray-100">
+            <th class="border px-4 py-2 text-left text-gray-800 font-medium">No</th>
+            <th class="border px-4 py-2 text-left text-gray-800 font-medium">Hobi</th>
+            <th class="border px-4 py-2 text-left text-gray-800 font-medium">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% hobbies.forEach((hobby, index)=> { %>
+            <tr class="hover:bg-gray-50">
+                <td class="border px-4 py-2 text-gray-700">
+                    <%= index + 1 %>
+                </td>
+                <td class="border px-4 py-2 text-gray-700">
+                    <%= hobby.hobby %>
+                </td>
+                <td class="border px-4 py-2">
+                    <form action="/delete" method="post">
+                    <a href="/show/<%= hobby.id %>" class="bg-green-500 text-white px-2 py-1 rounded  mr-2">show</a>
+                    <a href="/edit/<%= hobby.id %>" class="bg-blue-500 text-white px-2 py-1 rounded  mr-2">Update</a>
+                        <input type="hidden" name="id" value="<%= hobby.id %>">
+                    <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded " onclick="return confirm('apakah anda yakin?')">Delete</button>
+                </td>
+            </form>
+            </tr>
+            <% }) %>
+    </tbody>
+</table>
