@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+
+
+//controller hobby untuk web
 const { getAllHobbiesForIndex } = require('../controllers/hobbyController');
 const { getHobbyById } = require('../controllers/hobbyController');
 const { form } = require('../controllers/hobbyController');
@@ -31,6 +34,8 @@ router.get('/edit/:id', editHobby);
 router.post('/update', updateHobby);
 
 router.post('/delete', deleteHobby);
+
+
 
 
 

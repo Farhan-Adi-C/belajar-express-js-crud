@@ -61,129 +61,32 @@
                 <ul class="sidebar-menu">
 
                     <!-- Apps Area -->
-                    <li class="">
-                        <a href="javascript:void(0)" class="navItem">
-                            <span class="flex items-center">
-                                <iconify-icon class=" nav-icon" icon="ph:student"></iconify-icon>
-                                <span>Student</span>
-                            </span>
-                            <iconify-icon class="icon-arrow" icon="heroicons-outline:chevron-right"></iconify-icon>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            <li>
-                                <a href="{{ route('data') }}">Student List</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('form') }}">Add Student</a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-
-                    <li class="sidebar-menu-title">Menu</li>
-                    <li class="">
-                        <a href="{{ route('dashboard') }}" class="navItem">
-                            <span class="flex items-center">
-                                <iconify-icon class=" nav-icon" icon="heroicons-outline:home"></iconify-icon>
-                                <span>Dashboard</span>
-                            </span>
-                        </a>
-                    </li>
-
-
-                    <li class="">
-                        <a href="{{ route('data') }}" class="navItem">
-                            <span class="flex items-center">
-                                <iconify-icon class=" nav-icon" icon="ph:student"></iconify-icon>
-                                <span>Student</span>
-                            </span>
-                        </a>
-                    </li>
+                   
 
 
 
                     <li class="">
-                        <a href="{{ route('phone') }}" class="navItem">
-                            <span class="flex items-center">
-                                <iconify-icon class=" nav-icon" icon="line-md:phone-call-loop"></iconify-icon>
-                                <span>Phone</span>
-                            </span>
-                        </a>
-                    </li>
-
-
-
-                    <li class="">
-                        <a href="{{ route('detail.hobby') }}" class="navItem">
+                        <a href="/index" class="navItem">
                             <span class="flex items-center">
                                 <iconify-icon class=" nav-icon"
                                     icon="material-symbols:add-reaction-outline"></iconify-icon>
-                                <span>Hobbies</span>
+                                <span>Hobbies - MySql</span>
                             </span>
                         </a>
                     </li>
-
-
-
-                    <li class="sidebar-menu-title">APPS</li>
-
                     <li class="">
-                        <a href="javascript:void(0)" class="navItem">
+                        <a href="/mongodb/index" class="navItem">
                             <span class="flex items-center">
-                                <iconify-icon class=" nav-icon" icon="fluent-mdl2:blog"></iconify-icon>
-                                <span>Blogs</span>
+                                <iconify-icon class=" nav-icon"
+                                    icon="material-symbols:add-reaction-outline"></iconify-icon>
+                                <span>Hobbies - MongoDB</span>
                             </span>
-                            <iconify-icon class="icon-arrow" icon="heroicons-outline:chevron-right"></iconify-icon>
                         </a>
-                        <ul class="sidebar-submenu">
-
-                            <li>
-                                <a href="{{ route('blog') }}">All Blogs</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('write') }}">Write Blog</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('table.blog') }}">Table Blogs</a>
-                            </li>
-
-                        </ul>
                     </li>
 
 
 
-                    <li class="sidebar-menu-title">Advanced</li>
-
-                    <li class="">
-                        <a href="javascript:void(0)" class="navItem">
-                            <span class="flex items-center">
-                                <iconify-icon class=" nav-icon" icon="mdi:user-outline"></iconify-icon>
-                                <span>User</span>
-                            </span>
-                            <iconify-icon class="icon-arrow" icon="heroicons-outline:chevron-right"></iconify-icon>
-                        </a>
-                        <ul class="sidebar-submenu">
-
-                            <li>
-                                <a href="{{ route('user') }}">Detail Users</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('role') }}">Role</a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-
-
-
-
-
-
+                   
 
 
                 </ul>
@@ -1507,23 +1410,8 @@
                     id="content_wrapper">
                     <div class="page-content">
 
-                        <% if (body === 'store') { %>
-                            <%- include('store') %>
-                          <% } %>
-                          
-                        <% if (body==='index' ) { %>
-                            <%- include('index') %>
-                            <% } %>
-
-
-                            <% if (body==='show' ) { %>
-                                <%- include('show') %>
-                                
-                                <% } %>
+                                <%- include(body) %>
                             
-                                <% if (body === 'update') { %>
-                                    <%- include('update') %>
-                                <% } %>
                                 
                     </div>
                 </div>

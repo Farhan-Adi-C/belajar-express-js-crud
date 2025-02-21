@@ -1,6 +1,6 @@
 <div class="card shadow-lg p-4 mx-auto" style="width: 40rem; border-radius: 1rem; margin-left: 150px;">
     <h1 class="card-title text-center mb-4">Edit Hobby</h1>
-    <form action="/update" method="post">
+    <form action="/mongodb/update" method="post">
         <input type="hidden" name="id" value="<%= hobby.id %>">
         <div class="mb-3">
             <label for="hobby" class="form-label">Hobby</label>
@@ -20,6 +20,6 @@
       >
         Submit
       </button>
-      <a href="/index" class="btn btn-success w-100">Kembali</a>
+      <a href="/mongodb/index" class="btn btn-success w-100">Kembali</a>
     </form>
   </div>

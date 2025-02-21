@@ -1,7 +1,7 @@
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold text-gray-800">CRUD hobby - Database Mysql
+    <h2 class="text-2xl font-bold text-gray-800">CRUD hobby - Database MongoDB
     </h2>
-    <a href="/store"
+    <a href="/mongodb/store"
         class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600">Create</a>
 </div>
 <p class="text-gray-700 mb-4">Ini adalah daftar hobi:</p>
@@ -23,9 +23,9 @@
                     <%= hobby.hobby %>
                 </td>
                 <td class="border px-4 py-2">
-                    <form action="/delete" method="post">
-                    <a href="/show/<%= hobby.id %>" class="bg-green-500 text-white px-2 py-1 rounded  mr-2">show</a>
-                    <a href="/edit/<%= hobby.id %>" class="bg-blue-500 text-white px-2 py-1 rounded  mr-2">Update</a>
+                    <form action="/mongodb/delete" method="post">
+                    <a href="/mongodb/show/<%= hobby.id %>" class="bg-green-500 text-white px-2 py-1 rounded  mr-2">show</a>
+                    <a href="/mongodb/edit/<%= hobby.id %>" class="bg-blue-500 text-white px-2 py-1 rounded  mr-2">Update</a>
                         <input type="hidden" name="id" value="<%= hobby.id %>">
                     <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded " onclick="return confirm('apakah anda yakin?')">Delete</button>
                 </td>

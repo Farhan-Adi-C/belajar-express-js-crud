@@ -3,17 +3,26 @@ const app = express();
 const conn = require('./config/db');
 const port = 5000
 const path = require('path');
-
+const cors = require('cors');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // penanganan request body
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
-const web = require('./routes/web');
+const web = require('./routes/web-mysql');
   app.use('/', web);
+
+const apiMongoDB = require('./routes/api-mongodb');
+app.use('/mongodb/api', apiMongoDB);
+
+const webMongoDB = require('./routes/web-mongodb');
+app.use('/mongodb/', webMongoDB);
+
+
 
 
 // public
@@ -165,12 +174,12 @@ app.delete('/delete-hobby', function(req, res){
 })
 
 
-// app.get('/', (req, res) => {
-//     const data = "Hello World";
+app.get('/', (req, res) => {
+    const data = "Hello World";
 
-//     res.send(data)
+    res.send(data)
     
-//   })
+  })
   
 
   

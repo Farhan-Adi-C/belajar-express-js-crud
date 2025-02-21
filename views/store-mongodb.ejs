@@ -1,0 +1,23 @@
+<div class="card shadow-lg p-4 mx-auto" style="width: 40rem; border-radius: 1rem; margin-left: 150px;">
+    <h1 class="card-title text-center mb-4">What's Your Hobby?</h1>
+    <form action="/mongodb/create" method="post">
+      <div class="mb-3">
+        <label for="hobby" class="form-label">Hobby</label>
+        <input 
+          type="text" 
+          id="hobby" 
+          name="hobby" 
+          placeholder="Enter your hobby" 
+          class="form-control"
+          required
+        />
+      </div>
+      <button 
+        type="submit" 
+        class="btn btn-primary w-100 " style="margin-top: 20px;"
+      >
+        Submit
+      </button>
+      <a href="/index-mongodb" class="btn btn-success w-100">Kembali</a>
+    </form>
+  </div>
