@@ -10,14 +10,33 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-   url = "mongodb+srv://akunnbaru102:LjNZ4B1oOO1jNDyM@farhan.gpt39.mongodb.net/hobby?retryWrites=true&w=majority&appName=farhan"
-}
+  url      = "mongodb+srv://akunnbaru102:LjNZ4B1oOO1jNDyM@farhan.gpt39.mongodb.net/hobby?retryWrites=true&w=majority&appName=farhan"
+} 
 
 model Hobby {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  hobby String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  hobby     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("hobbies")
+}
+
+model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  name  String
+  password String
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   
+  session   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("sessions")
 }
